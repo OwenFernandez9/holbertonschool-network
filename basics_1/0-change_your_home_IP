@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script configures the /etc/hosts file to change the resolution of localhost and facebook.com.
 
 cp /etc/hosts /etc/hosts.bak
 
