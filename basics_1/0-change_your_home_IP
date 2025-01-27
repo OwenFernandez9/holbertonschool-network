@@ -6,11 +6,11 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-grep -v "localhost" /etc/hosts | grep -v "facebook.com" > /etc/hosts.tmp
+sed -i '/localhost/d' /etc/hosts
+sed -i '/facebook.com/d' /etc/hosts
 
 echo "127.0.0.2 localhost" >> /etc/hosts
 echo "8.8.8.8 facebook.com" >> /etc/hosts
 
-mv /etc/hosts.tmp /etc/hosts
 
 echo "Configuration completed. Entries have been updated in /etc/hosts."
